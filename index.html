@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="soudu sandeep, portfolio, sandeep, developer, personal portfolio" />
+    <meta name="description" content="Welcome to Sandeep's Portfolio. Full-Stack Developer and Machine Learning Enthusiast." />
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- Favicon -->
+    <link id='favicon' rel="shortcut icon" href="./assets/images/favicon.png" type="image/x-png">
+    <title>Portfolio | Soudu Sandeep</title>
+</head>
+<style>
+    /* About Section */
+    .about {
+        padding: 100px 20px;
+        background-color: #e0f7fa; /* Light blue background */
+        color: #333; /* Dark text for readability */
+        text-align: left;
+    }
+
+    .about .heading {
+        font-size: 40px;
+        color: #0288d1; /* Darker blue color for heading */
+        margin-bottom: 30px;
+    }
+
+    .about p {
+        font-size: 18px;
+        color: #555; /* Slightly lighter text color */
+    }
+
+    .about .box-container {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        margin-top: 20px;
+    }
+
+    .about .box {
+        background-color: #ffffff; /* White box to highlight information */
+        padding: 20px;
+        margin: 10px;
+        border-radius: 8px;
+        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+        flex: 1 1 250px; /* Flexbox for responsive layout */
+    }
+
+    .about .box p {
+        color: #333; /* Text inside the box */
+    }
+
+    /* Skills Section */
+    .skills {
+        padding: 60px 20px;
+        background-color: #f7f7f7;
+        text-align: center;
+    }
+
+    .skills .heading {
+        font-size: 36px;
+        color: #333;
+        margin-bottom: 40px;
+    }
+
+    .skills .heading span {
+        color: #ff5722;
+    }
+
+    .skills .box-container {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        flex-wrap: wrap;
+    }
+
+    .skills .box {
+        padding: 30px;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        width: 250px;
+        text-align: center;
+        transition: transform 0.3s ease-in-out;
+        border: 2px solid white; /* White border for skills */
+    }
+
+    .skills .box:hover {
+        transform: translateY(-10px);
+        border-color: #ff5722; /* Red border on hover */
+    }
+
+    .skills .box h3 {
+        font-size: 24px;
+        margin-bottom: 15px;
+        color: white; /* White text for skill titles */
+        padding: 10px;
+        border-radius: 5px;
+    }
+
+    .skills .box p {
+        font-size: 16px;
+        color: red; /* Red color for skills and abilities text */
+    }
+
+    /* Different colors for each skill */
+    .skills .box:nth-child(1) h3 {
+        background-color: #ff5722; /* Java */
+    }
+
+    .skills .box:nth-child(2) h3 {
+        background-color: #4caf50; /* Python */
+    }
+
+    .skills .box:nth-child(3) h3 {
+        background-color: #2196f3; /* C */
+    }
+
+    .skills .box:nth-child(4) h3 {
+        background-color: #ffc107; /* Web Development */
+    }
+
+    .skills .box:nth-child(5) h3 {
+        background-color: #9c27b0; /* Databases */
+    }
+
+    .skills .box:nth-child(6) h3 {
+        background-color: #3f51b5; /* Tools */
+    }
+
+    /* Internship Section */
+    .internship {
+        padding: 60px 20px;
+        background-color: #e3f2fd;
+        background-image: url('https://images.unsplash.com/photo-1531898011229-e81d61cb8f93');
+        background-size: cover;
+        background-position: center;
+        color: white;
+    }
+
+    .internship .heading {
+        font-size: 36px;
+        text-align: center;
+        color: #333;
+        margin-bottom: 40px;
+    }
+
+    .internship .container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 40px;
+        flex-wrap: wrap;
+    }
+
+    .internship .content {
+        background-color: rgba(0, 0, 0, 0.6); /* Semi-transparent black background */
+        padding: 40px;
+        width: 1000px; /* Decreased width for Google AI-ML Internship */
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+        text-align: center;
+        color: white;
+    }
+
+    .internship .content h3 {
+        font-size: 28px;
+        margin-bottom: 15px;
+        color: #ffcc00; /* Gold for Google AI-ML */
+    }
+
+    .internship .content p {
+        font-size: 16px;
+        margin-bottom: 20px;
+        line-height: 1.6;
+    }
+
+    .internship .content ul {
+        text-align: left;
+        font-size: 16px;
+        margin-left: 20px;
+        color: #fff;
+    }
+
+    .internship .content ul li {
+        margin-bottom: 10px;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+        .skills .box-container {
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .internship .container {
+            flex-direction: column;
+            align-items: center;
+        }
+    }
+</style>
+
+
+<body oncontextmenu="return false">
+
+<!-- Navbar -->
+<header>
+    <a href="/" class="logo"><i class="fab fa-node-js"></i> Sandeep</a>
+    <div id="menu" class="fas fa-bars"></div>
+    <nav class="navbar">
+        <ul>
+            <li><a class="active" href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#education">Education</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#internship">Internship</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+</header>
+
+<!-- Hero Section -->
+<section class="home" id="home">
+    <div id="particles-js"></div>
+    <div class="content">
+        <h2>Hi There,<br/> I'm Soudu <span>Sandeep</span></h2>
+        <p>I'm a passionate <span class="typing-text">Developer</span>.</p>
+        <a href="#about" class="btn"><span>About Me</span>
+          <i class="fas fa-arrow-circle-down"></i>
+        </a>
+        <div class="socials">
+            <ul class="social-icons">
+                <li><a class="linkedin" aria-label="LinkedIn" href="https://www.linkedin.com/in/soudu-sandeep-139706260/" target="_blank"><i class="fab fa-linkedin"></i></a></li>
+                <li><a class="github" aria-label="GitHub" href="https://github.com/Sandeepsoudu" target="_blank"><i class="fab fa-github"></i></a></li>
+                <li><a class="leetcode" aria-label="LeetCode" href="https://leetcode.com/u/Sandeep-2004/" target="_blank"><i class="fas fa-code"></i></a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="image">
+        <img draggable="false" class="tilt" src="./assets/images/pic2.jpg" alt="">
+    </div>
+</section>
+
+<!-- About Section -->
+<section class="about" id="about">
+    <h2 class="heading"><i class="fas fa-user-alt"></i> About <span>Me</span></h2>
+    <div class="row">
+        <div class="image">
+            <img draggable="false" class="tilt" src="./assets/images/pic1.jpg" alt="Soudu Sandeep">
+        </div>
+        <div class="content">
+            <h3>I'm Soudu Sandeep</h3>
+            <span class="tag">Aspiring Software Developer</span>
+            <p>I am an aspiring Software Developer with a strong interest in programming and technology. My journey in the field of Computer Science and Engineering has provided me with a solid foundation in languages such as Java, Python, and C, along with practical experience in building innovative projects.</p>
+            <p>With a knack for solving real-world problems, I have worked on projects like AI Chatbots and Network Intrusion Detection Systems, where I utilized tools like Natural Language Processing (NLP) and Machine Learning to create impactful solutions. My skill set also includes web technologies like HTML, CSS, and JavaScript, which I leverage to develop interactive and efficient user interfaces.</p>
+            <p>Currently, I am pursuing my B.Tech in Computer Science and Engineering and continuously strive to enhance my knowledge and contribute to meaningful projects. I am passionate about leveraging technology to create innovative and reliable solutions that make a difference.</p>
+            <div class="box-container">
+                <div class="box">
+                    <p><span>Email: </span> sandeepsoudu47@gmail.com</p>
+                    <p><span>Location: </span> Siddipet, India</p>
+                </div>
+            </div>
+            <div class="resumebtn">
+                <a href="https://drive.google.com/file/d/1Rbp_gdHClrJfIfhgDWSYW1yHe-z87tKV/view?usp=drivesdk" class="btn"><span>Resume</span>
+                    <i class="fas fa-chevron-right"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- Skills Section -->
+<section class="skills" id="skills">
+    <h2 class="heading"><span>Skills</span></h2>
+    <div class="box-container">
+        <div class="box">
+            <h3>Programming Languages</h3>
+            <p>Java, Python, C</p>
+        </div>
+        <div class="box">
+            <h3>Web Development</h3>
+            <p>HTML, CSS, JavaScript</p>
+        </div>
+        <div class="box">
+            <h3>Databases</h3>
+            <p>SQL</p>
+        </div>
+        <div class="box">
+            <h3>Tools</h3>
+            <p>Visual Studio Code</p>
+        </div>
+        <div class="box">
+            <h3>Other Skills</h3>
+            <p>Machine Learning, AI</p>
+        </div>
+    </div>
+</section>
+<!-- Internship Section -->
+<section class="internship" id="internship">
+    <h2 class="heading"><i class="fas fa-briefcase"></i> Internship</h2>
+    <div class="container">
+        <div class="content">
+            <h3>Google AI-ML (AICTE Internship)</h3>
+            <p>
+                I participated in the Google AI-ML internship under the AICTE (All India Council for Technical Education) initiative. During this internship, I gained hands-on experience in machine learning algorithms, AI models, and data science practices.
+            </p>
+            <p>
+                Key Learnings and Contributions:
+                <ul>
+                    <li>Worked on building machine learning models to predict various data patterns.</li>
+                    <li>Participated in discussions about AI ethics, model deployment, and scaling models in production environments.</li>
+                    <li>Developed skills in Python, TensorFlow, and Keras for deep learning models.</li>
+                    <li>Contributed to AI-based projects with a focus on data preprocessing and model training.</li>
+                </ul>
+            </p>
+        </div>
+    </div>
+</section>
+
+<!-- Education Section -->
+<section class="education" id="education">
+    <h2 class="heading"><i class="fas fa-graduation-cap"></i> Education</h2>
+    <div class="box-container">
+        <div class="box">
+            <div class="image">
+                <img draggable="false" src="https://tse2.mm.bing.net/th?id=OIP.aTfFoBN8o6CM_DxU4jeO5wHaE8&pid=Api&P=0&h=220" alt="">
+            </div>
+            <div class="content">
+                <h3>Bachelor of Technology</h3>
+                <p>SR University, Warangal</p>
+                <h4>2022-2025 | CGPA: 8.85</h4>
+            </div>
+        </div>
+        <div class="box">
+            <div class="image">
+                <img draggable="false" src="https://cache.careers360.mobi/media/presets/720X480/colleges/social-media/media-gallery/25954/2019/10/5/Campus%20view%20of%20Government%20Polytechnic%20Siddipet_Campus-view.JPG" alt="">
+            </div>
+            <div class="content">
+                <h3>Diploma</h3>
+                <p>Govt. Polytechnic, Siddipet</p>
+                <h4>2019-2022 | CGPA: 8.19</h4>
+            </div>
+        </div>
+        <div class="box">
+            <div class="image">
+              <img draggable="false" src="https://4.bp.blogspot.com/_up5ZkgSNkvI/TDUe56mdAII/AAAAAAAAAAc/QLoSiNTmLMg/s1600/NEW+BUILD.JPG" alt="">
+            </div>
+            <div class="content">
+                <h3>Secondary School</h3>
+                <p>ZPHS, Dumpalapally</p>
+                <h4>2019 | GPA: 9.7</h4>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Projects Section -->
+<section class="work" id="projects">
+    <h2 class="heading"><i class="fas fa-laptop-code"></i> Projects</h2>
+    <div class="box-container">
+        <!-- Project 1: AI Chatbot -->
+        <div class="box">
+            <div class="image">
+                <img draggable="false" src="https://up.yimg.com/ib/th?id=OIP.b9dUdR7XHup2ziWnhr5X_QHaE8&pid=Api&rs=1&c=1&qlt=95&w=158&h=105" alt="AI Chatbot">
+            </div>
+            <div class="content">
+                <div class="tag">
+                    <h3>AI Chatbot</h3>
+                </div>
+                <div class="desc">
+                    <p>
+                        • Developed an AI chatbot using Python, with NLP for real-time user interactions.<br>
+                        • Implemented machine learning models to enhance response accuracy and adaptability.<br>
+                        • Utilized NLP libraries (NLTK) for language processing and sentiment analysis.<br>
+                        • Deployed on a Flask-based web platform for seamless user experience.
+                    </p>
+                    <a href="https://github.com/Sandeepsoudu/AI--CHATBOT" class="btn" target="_blank">Code <i class="fas fa-code"></i></a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Project 2: Network Intrusion Detection -->
+        <div class="box">
+            <div class="image">
+                <img draggable="false" src="https://accelerationeconomy.com/wp-content/uploads/2022/03/IDS-and-IPS-Intrusion-Detection-and-Prevention.jpg" alt="Network Intrusion Detection">
+            </div>
+            <div class="content">
+                <div class="tag">
+                    <h3>Network Intrusion Detection</h3>
+                </div>
+                <div class="desc">
+                    <p>
+                        • Built a Network Intrusion Detection System using ML algorithms to detect unauthorized access.<br>
+                        • Processed and analyzed network traffic data for anomaly detection.<br>
+                        • Implemented real-time monitoring to identify malicious activities and protect against threats.<br>
+                        • Enhanced detection accuracy and minimized false positives for robust network security.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Project 3: Online Cab Booking System -->
+        <div class="box">
+            <div class="image">
+                <img draggable="false" src="https://tse3.mm.bing.net/th?id=OIP.2SM4bAYiXe7xX6hiH7ZfyAHaDR&pid=Api&P=0&h=220" alt="Online Cab Booking System">
+            </div>
+            <div class="content">
+                <div class="tag">
+                    <h3>Online Cab Booking System</h3>
+                </div>
+                <div class="desc">
+                    <p>
+                        • Developed an Online Cab Booking System using Java for efficient ride management.<br>
+                        • Designed a user-friendly interface to book, track, and manage rides.<br>
+                        • Integrated features for fare calculation, driver assignment, and ride history.<br>
+                        • Ensured system reliability and scalability with efficient backend algorithms.
+                    </p>
+                    <a href="https://github.com/Sandeepsoudu/CabBookingSystem" class="btn" target="_blank">Code <i class="fas fa-code"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- Contact Section -->
+<section class="contact" id="contact">
+    <h2 class="heading"><i class="fas fa-headset"></i> Get in <span>Touch</span></h2>
+    <div class="container">
+        <div class="content">
+            <div class="image-box">
+                <img draggable="false" src="./assets/images/contact1.png" alt="">
+            </div>
+            <form id="contact-form">
+                <div class="form-group">
+                    <div class="field">
+                        <input type="text" name="name" placeholder="Name" required>
+                        <i class='fas fa-user'></i>
+                    </div>
+                    <div class="field">
+                        <input type="text" name="email" placeholder="Email" required>
+                        <i class='fas fa-envelope'></i>
+                    </div>
+                    <div class="field">
+                        <input type="text" name="phone" placeholder="Phone">
+                        <i class='fas fa-phone-alt'></i>
+                    </div>
+                    <div class="message">
+                        <textarea placeholder="Message" name="message" required></textarea>
+                        <i class="fas fa-comment-dots"></i>
+                    </div>
+                </div>
+                <div class="button-area">
+                    <button type="submit">Submit <i class="fa fa-paper-plane"></i></button>
+                </div>
+            </form>
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<section class="footer">
+    <div class="box-container">
+        <div class="box">
+            <h3>Sandeep's Portfolio</h3>
+            <p>Thank you for visiting my portfolio. Let's connect!</p>
+        </div>
+        <div class="box">
+            <h3>Quick Links</h3>
+            <a href="#home"><i class="fas fa-chevron-circle-right"></i> Home</a>
+            <a href="#about"><i class="fas fa-chevron-circle-right"></i> About</a>
+            <a href="#skills"><i class="fas fa-chevron-circle-right"></i> Skills</a>
+            <a href="#education"><i class="fas fa-chevron-circle-right"></i> Education</a>
+            <a href="#projects"><i class="fas fa-chevron-circle-right"></i> Projects</a>
+        </div>
+        <div class="box">
+            <h3>Contact Info</h3>
+            <p><i class="fas fa-envelope"></i> sandeepsoudu47@gmail.com</p>
+            <p><i class="fas fa-map-marked-alt"></i> Siddipet, India</p>
+        </div>
+    </div>
+    <h1 class="credit">Designed by Soudu Sandeep</h1>
+</section>
+
+<!-- Scroll Top Button -->
+<a href="#home" aria-label="ScrollTop" class="fas fa-angle-up" id="scroll-top"></a>
+
+<!-- JavaScript Links -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.5/typed.min.js"></script>
+<script src="./assets/js/particles.min.js"></script>
+<script src="./assets/js/app.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.7.0/vanilla-tilt.min.js"></script>
+<script src="https://unpkg.com/scrollreveal"></script>
+<script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+<script src="./assets/js/script.js"></script>
+
+</body>
+</html>
